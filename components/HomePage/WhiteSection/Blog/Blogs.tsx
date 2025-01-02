@@ -4,7 +4,7 @@ import Blog from './Blog'
 
 const Blogs = () => {
   return (
-    <section className=' w-full'>
+    <section className=' w-full mt-12'>
 
       {/* left section match blogs  */}
       <div className=' border rounded-lg w-8/12 py-4'>

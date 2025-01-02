@@ -1,8 +1,26 @@
+"use client"
+import axios from 'axios'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaWhatsapp } from 'react-icons/fa'
 
 const Directions = () => {
+  const [whatsappLink, setWhatsappLink] = useState("")
+  useEffect(() => {
+    const fetchWhatsappLink = async () => {
+      try {
+        const response = await axios.get('https://ghostpanel.tech/api/whatsapp')
+        if (response.data.status === "success") {
+          setWhatsappLink(response.data.data.link)
+        }
+      } catch (error) {
+        console.error('Error fetching WhatsApp link:', error)
+      }
+    }
+
+    fetchWhatsappLink()
+  }, [])
+
   return (
     <div className=' bg-bgSlate p-4  flex flex-col gap-6 my-10'>
 
@@ -34,12 +52,12 @@ const Directions = () => {
 
       {/* whatsapp button  */}
       <div className=' flex justify-center items-center my-8'>
-        <Link href={"/"}>
-          <button className=' bg-green md:px-12   md:py-3 rounded-full text-white flex items-center gap-1 text-[1.2rem] hover:bg-darkGreen hover:scale-95 transition-all duration-300 ease-in-out py-1 px-3'>
+        <Link href={whatsappLink || "/"}>
+          <button className=' bg-green md:px-6 md:py-2.5 rounded-full text-white flex items-center gap-1 text-[1.2rem] hover:bg-darkGreen hover:scale-95 transition-all duration-300 ease-in-out py-1 px-3'>
             <span>
-              <FaWhatsapp />
+              <FaWhatsapp className='text-xl' />
             </span>
-            Get Your ID
+            Get Your !D
           </button>
         </Link>
       </div>

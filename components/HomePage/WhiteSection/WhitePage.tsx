@@ -1,14 +1,14 @@
 import React from 'react'
 import Blogs from './Blog/Blogs'
-import AllMatches from './Matches/AllMatches'
 import Directions from './Directions/Directions'
+import UpcommingMatces from './UpcommingMatches/UpcommingMatces'
 
 const WhitePage = () => {
   return (
-    <section className=' w-11/12 relative mx-auto mt-[8rem]'>
+    <section className='w-11/12 relative mx-auto mt-[12rem]'>
+      <UpcommingMatces />
       <Blogs />
-      <AllMatches/>
-      <Directions/>
+      <Directions />
     </section>
   )
 }

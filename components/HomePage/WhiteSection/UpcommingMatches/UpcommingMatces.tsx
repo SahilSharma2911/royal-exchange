@@ -48,7 +48,7 @@ const UpcommingMatces = () => {
 
     if (!upcomingMatches.length) {
         return <div className="font-Lato w-full  px-4 sm:px-8 lg:px-0">
-            <h2 className="text-xl sm:text-2xl font-bold w-full mx-auto flex justify-center items-center">
+            <h2 className="text-xl sm:text-2xl font-bold w-full mx-auto flex justify-center items-center mb-3">
                 Upcoming Matches
             </h2>
             No matches available

@@ -31,7 +31,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Content */}
-      <div className="relative w-11/12 mx-auto pt-6 md:pt-10 z-10">
+      <div className="relative w-11/12 mx-auto pt-10 z-10">
         <Matches />
         <Advertisment />
       </div>

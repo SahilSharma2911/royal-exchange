@@ -78,7 +78,7 @@ const MatchCard: React.FC<MatchCardProps> = ({ match_id }) => {
       {/* Date & Time Section */}
       <div className="relative bg-[#FEF9E8] flex flex-col items-center justify-center px-6 py-4 sm:px-10 sm:py-6 text-center lg:w-1/3">
         <div className="absolute top-[-10%] left-1/2 transform -translate-x-1/2 bg-[#3A225D] text-white text-xs sm:text-sm px-4 sm:px-7 py-1 sm:py-2 rounded-md">
-          {scoreData.update}
+          Upcoming
         </div>
         <h3 className="font-bold text-base sm:text-lg md:text-xl">{scoreData.title}</h3>
         <p className="text-sm sm:text-base">{isUpcoming ? "Match starts soon" : scoreData.livescore}</p>

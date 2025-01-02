@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 interface ScoreData {
   title: string;
@@ -25,6 +27,46 @@ interface ScoreData {
   bowlertwowickers: string;
   bowlertwoeconomy: string;
 }
+
+const MatchSkeleton = () => {
+  return (
+    <section className="mx-2 rounded-xl bg-white">
+      <div className="space-y-1 py-2 px-6">
+        <div className="flex items-center gap-2">
+          <Skeleton width={60} />
+          <Skeleton width={200} />
+        </div>
+
+        <div className="space-y-2 mt-2">
+          {/* Team 1 */}
+          <div className="flex justify-between items-center">
+            <div className="flex items-center gap-2">
+              <Skeleton width={28} height={20} />
+              <Skeleton width={120} />
+            </div>
+            <Skeleton width={40} />
+          </div>
+
+          {/* Team 2 */}
+          <div className="flex justify-between items-center">
+            <div className="flex items-center gap-2">
+              <Skeleton width={28} height={20} />
+              <Skeleton width={120} />
+            </div>
+            <Skeleton width={40} />
+          </div>
+
+          {/* Result */}
+          <Skeleton width={250} />
+        </div>
+      </div>
+      <hr />
+      <div className="px-6 py-2">
+        <Skeleton width={100} />
+      </div>
+    </section>
+  );
+};
 
 const SingleMatch = (match_id: any) => {
   console.log("score id", match_id.match_id)
@@ -55,7 +97,7 @@ const SingleMatch = (match_id: any) => {
   }
 
   if (loading) {
-    return <div>Loading score...</div>;
+    return <MatchSkeleton />;;
   }
   return (
     <section className="mx-2 rounded-xl bg-white">

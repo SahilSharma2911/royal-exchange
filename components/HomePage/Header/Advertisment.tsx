@@ -43,7 +43,7 @@ const Advertisment = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentText}
-              className=" w-full"
+              className=" w-full font-Playfair"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}

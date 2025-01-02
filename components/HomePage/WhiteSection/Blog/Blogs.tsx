@@ -7,7 +7,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-
 interface Article {
   id: number;
   title: string;
@@ -21,7 +20,7 @@ const Blogs = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedArticle, setSelectedArticle] = useState(1);
+  const [selectedArticle, setSelectedArticle] = useState<number | null>(null);
   const [whatsappLink, setWhatsappLink] = useState("")
 
   useEffect(() => {
@@ -30,6 +29,9 @@ const Blogs = () => {
         setLoading(true);
         const response = await axios.get('https://ghostpanel.tech/api/articles');
         setArticles(response.data);
+        if (response.data.length > 0) {
+          setSelectedArticle(response.data[0].id);
+        }
         setError(null);
       } catch (err) {
         console.error('Error fetching articles:', err);

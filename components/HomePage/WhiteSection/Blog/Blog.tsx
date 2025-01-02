@@ -22,7 +22,8 @@ const Blog = ({ article }: BigBlogProps) => {
         <Image src={"/smallBlog.png"} alt='Image' width={200} height={200} className=' object-fill w-[200px] rounded-lg' />
       </div>
       <div>
-        <h3>          {article.title}
+        <h3 className='text-sm font-medium'>
+          {article.title}
         </h3>
       </div>
 
